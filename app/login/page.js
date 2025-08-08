@@ -2,7 +2,7 @@
 import React,{useEffect} from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
-const login = () => {
+const Login = () => {
   const { data: session } = useSession();
   const router = useRouter();
   useEffect(() => {
@@ -248,4 +248,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;
