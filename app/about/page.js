@@ -14,7 +14,7 @@ const About = () => {
                     <img className="w-20 h-20 rounded-full mr-4" src="/group.gif" alt="Fans Want to Collaborate" />
                     <div>
                         <h3 className="text-xl font-semibold mb-2">Fans Want to Collaborate</h3>
-                        <p>Your fans are enthusiastic about collaborating with you on your projects.</p>
+                        <p>Your fans are enthusiastic about collaborating with you on your project.</p>
                     </div>
                 </div>
                 <div className="flex items-center mb-6">

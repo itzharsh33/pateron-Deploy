@@ -163,7 +163,7 @@ const PaymentPage = ({ username }) => {
                     >
                       ₹{p.amount}
                     </span>{" "}
-                    with lovely message {p.message}
+                    with a message {p.message}
                   </span>
                 </li>
               );
