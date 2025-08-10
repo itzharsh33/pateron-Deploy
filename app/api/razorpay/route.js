@@ -4,7 +4,7 @@ import { validatePaymentVerification } from "razorpay/dist/utils/razorpay-utils"
 import Payment from "@/models/Payment";
 import Razorpay from "razorpay";
 import connectDB from "@/db/connectDb";
-import User from "@/models/User";
+// import User from "@/models/User";
 export const POST = async (req) => {
 // This defines a function that handles incoming POST requests sent to this API route (/api/razorpay). Razorpay sends data here after a user completes a payment.
 await connectDB()
@@ -20,9 +20,10 @@ return NextResponse.json({success:false,message:"order id not found"})
 }
 
 
-let user = await User.findOne({username:p.to_user})
+// let user = await User.findOne({username:p.to_user})
 // It finds the user who is supposed to receive the payment.
-const secret = user.razorpaysecret
+// const secret = user.razorpaysecret
+const secret = process.env.RAZORPAY_SECRET;
 // It retrieves that specific user's private Razorpay secret key. This is essential for the verification step.
 // verify the payment
 
@@ -32,7 +33,7 @@ let xx = validatePaymentVerification({"order_id": body.razorpay_order_id,"paymen
 if(xx){
 // update the payment status
 
-const updatedPayment = await Payment.findOneAndUpdate({oid:body.razorpay_order_id},{done:"true"},{new:true})
+const updatedPayment = await Payment.findOneAndUpdate({oid:body.razorpay_order_id},{done:true},{new:true})
 // It finds the pending payment record in your database and updates its status by setting done to "true".
 return NextResponse.redirect(`${process.env.NEXT_PUBLIC_URL}/${updatedPayment.to_user}?paymentdone=true`)
 // It redirects the user's browser back to the creator's profile page and adds ?paymentdone=true to the URL. This signals to the frontend that the payment was successful.
