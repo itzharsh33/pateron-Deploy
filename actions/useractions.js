@@ -9,12 +9,22 @@ export const initiate = async (amount, to_username,paymentform)=>{
 //  It accepts the amount of the payment, the username of the person receiving it (to_username), and the supporter's details (paymentform).
 await connectDB()
 
-
-let user = await User.findOne({username:to_username})
+// i am currently commenting below line code for vercel
+// let user = await User.findOne({username:to_username})
 // It finds the user in your database who is receiving the payment.
-const secret = user.razorpaysecret
+
+// i am currently commenting below line code for vercel
+// const secret = user.razorpaysecret
 // It retrieves that specific user's private Razorpay secret key from their profile.
-var instance = new Razorpay({key_id:user.razorpayid,key_secret:secret})
+
+// i am currently commenting below line code for vercel
+// var instance = new Razorpay({key_id:user.razorpayid,key_secret:secret})
+
+// i have added this below code in replace of above three commented line
+var instance = new Razorpay({
+    key_id: process.env.RAZORPAY_KEY_ID,
+    key_secret: process.env.RAZORPAY_SECRET
+});
 // This creates a new Razorpay instance that is authenticated with the recipient's specific API keys. This ensures the payment goes to the correct Razorpay account.
 // process.env.RAZORPAY_KEY_ID
 let options = {
