@@ -69,8 +69,8 @@ const PaymentPage = ({ username }) => {
 
     let orderId = a.id;
     var options = {
-      // key: process.env.NEXT_PUBLIC_KEY_ID, // Enter the Key ID generated from the Dashboard
-      key: currentUser.razorpayid,
+      key: process.env.NEXT_PUBLIC_KEY_ID, // Enter the Key ID generated from the Dashboard
+      // key: currentUser.razorpayid,
       amount: amount, // Amount is in currency subunits.
       currency: "INR",
       name: "Get Me A Chai", //your business name
