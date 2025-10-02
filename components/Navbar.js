@@ -62,7 +62,12 @@ const Navbar = () => {
         {session && (
        
             <button
-            onClick={()=>signOut()}
+            // onClick={()=>signOut()}
+              onClick={() =>
+        signOut({ redirect: false }).then(() => {
+          router.push("/"); // redirect to home page after logout
+        })
+      }
               type="button"
               className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >
