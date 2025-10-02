@@ -55,6 +55,7 @@ const Navbar = () => {
   // onClick={()=>signOut()}
     onClick={(e) => {
       e.preventDefault();
+      // In your code, you call e.preventDefault(), so the browser never actually follows href="#".
       signOut({ redirect: false }).then(() => {
         window.location.href = "/"; // or use router.push("/")
       });
