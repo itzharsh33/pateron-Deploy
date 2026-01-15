@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "mongoose": "^8.17.1",
-    "next": "15.3.5",
+    "next": "15.3.8",
     "next-auth": "^4.24.11",
     "razorpay": "^2.9.6",
     "react": "^19.0.0",
