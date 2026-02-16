@@ -51,7 +51,6 @@ const Navbar = () => {
         <Link href={`/${session.user.name}`} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Page</Link>
       </li>
       <li>
-<<<<<<< HEAD
         {/* <Link onClick={()=>signOut()} href="/" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link> */}
                 <Link
           onClick={(e) => {
@@ -59,15 +58,6 @@ const Navbar = () => {
           // In your code, you call e.preventDefault(), so the browser never actually follows href="#".
           signOut({ redirect: false }).then(() => {
           window.location.href = "/"; // or use router.push("/")
-=======
-        <Link
-  // onClick={()=>signOut()}
-    onClick={(e) => {
-      e.preventDefault();
-      // In your code, you call e.preventDefault(), so the browser never actually follows href="#".
-      signOut({ redirect: false }).then(() => {
-        window.location.href = "/"; // or use router.push("/")
->>>>>>> d6e570bfbbe537f8d7abcacf078ab77b2fa5cb67
       });
     }}
     href="#"
@@ -83,11 +73,7 @@ const Navbar = () => {
        
             <button
             // onClick={()=>signOut()}
-<<<<<<< HEAD
                  onClick={() =>
-=======
-              onClick={() =>
->>>>>>> d6e570bfbbe537f8d7abcacf078ab77b2fa5cb67
         signOut({ redirect: false }).then(() => {
           router.push("/"); // redirect to home page after logout
         })
