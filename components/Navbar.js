@@ -51,7 +51,17 @@ const Navbar = () => {
         <Link href={`/${session.user.name}`} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Page</Link>
       </li>
       <li>
-        <Link onClick={()=>signOut()} href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link>
+        {/* <Link onClick={()=>signOut()} href="/" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link> */}
+                <Link
+          onClick={(e) => {
+          e.preventDefault();
+          // In your code, you call e.preventDefault(), so the browser never actually follows href="#".
+          signOut({ redirect: false }).then(() => {
+          window.location.href = "/"; // or use router.push("/")
+      });
+    }}
+    href="#"
+    className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link>
       </li>
     </ul>
 </div> 
@@ -62,7 +72,12 @@ const Navbar = () => {
         {session && (
        
             <button
-            onClick={()=>signOut()}
+            // onClick={()=>signOut()}
+                 onClick={() =>
+        signOut({ redirect: false }).then(() => {
+          router.push("/"); // redirect to home page after logout
+        })
+      }
               type="button"
               className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
             >

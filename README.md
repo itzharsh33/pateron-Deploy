@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎯 Creator Support & Monetization Platform
 
-## Getting Started
+A full-stack web application inspired by Patreon that enables users to support content creators through secure donations. Built using modern web technologies with a focus on performance, security, and scalability.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- 🔐 GitHub OAuth Authentication for secure and seamless login
+- 💳 Integrated Donation System to support creators
+- 🧠 Secure Data Management using MongoDB
+- 🎨 Responsive UI built with Tailwind CSS
+- ⚙️ Full-Stack Architecture powered by Next.js
+- 📊 Transaction History & User Management
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- HTML
+- Tailwind CSS
+- JavaScript
+- Next.js
+
+### Backend
+- Next.js API Routes
+- MongoDB
+- OAuth (GitHub)
+- Payment Gateway Integration
+
+### Tools & Deployment
+- Git & GitHub
+- Vercel
+- MongoDB Atlas
+
+---
+
+## 📂 Project Structure
+
+/app → Frontend pages and layouts
+/api → Backend API routes
+/components → Reusable UI components
+/models → MongoDB schemas
+/public → Static assets
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
 
 ```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+2. Install Dependencies
+
+npm install
+
+3. Configure Environment Variables
+
+Create a .env.local file and add:
+
+MONGODB_URI=your_mongodb_connection_string
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+NEXTAUTH_SECRET=your_secret_key
+PAYMENT_GATEWAY_KEY=your_key
+
+
+4. Run the Application
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open in browser: http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+👨‍💻 Author
 
-## Learn More
+Harsh Kumar Yadav
+B.Tech CSE | Full Stack Developer
 
-To learn more about Next.js, take a look at the following resources:
+GitHub: https://github.com/itzharsh33
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
